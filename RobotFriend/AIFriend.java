@@ -39,7 +39,7 @@ public class AITeacher {
       { "1/10","2/10","3/10","4/10","5/10","6/10","7/10","8/10","9/10","10/10","11/10",},
       { "I think they are cool.","They're great.","I don't like them.","I think they are bad.","I think they're good","I think they're great." , },
       { "Yes.", "No.", "I don't know." },
-      {"That's a great question. Let me know what you come up with.","I don't know"},
+      {"That's a great question.","I don't know"},
       { "Over there.", "Right there.", "I don't know."},
     };
     
@@ -48,18 +48,18 @@ public class AITeacher {
     Message("Welcome, "+Username+"!");
     
     //Scanner sc = new Scanner(System.in);
-    System.out.println("AI Cabase is online. Ask your question.");
+    System.out.println("AI Friend is online. Ask your question.");
     System.out.println("Your chat experience will be logged here.");
-    Message("AI Cabase is online. Ask your question.");
+    Message("AI Friend is online. Ask your question.");
     
     
     while(true){ //infinite loop
         //String question = sc.nextLine(); //input
-        String question = GuiQ("Input","Talk to AI Cabase");
+        String question = GuiQ("Input","Talk to AI Friend");
         System.out.println(Username+": "+question);
         if (question == null){
-            System.out.println("AI Cabase is offline.");
-            Message("AI Cabase is offline.");
+            System.out.println("AI Friend is offline.");
+            Message("AI Friend is offline.");
             break;
         }
         question = question.toLowerCase(); //to lowercase
@@ -73,7 +73,7 @@ public class AITeacher {
             for(int x = 0; x < keywords[y].length; x++){ // for each index X in Y
                if(question.contains(" "+keywords[y][x].toLowerCase()+" ")){ //if question is keyword and make sure that it isn't part of another word
                    int responseX = randomInt((Answers[y].length));                   
-                   System.out.println("Cabase: "+Answers[y][responseX]); //print response.
+                   System.out.println("Friend: "+Answers[y][responseX]); //print response.
                    Message(Answers[y][responseX]);
                    question = "";
                    found = true;
@@ -90,7 +90,7 @@ public class AITeacher {
         }
         }
     }
-    System.out.println("AI Cabase is offline.");
-    Message("AI Cabase is offline.");
+    System.out.println("AI Friend is offline.");
+    Message("AI Friend is offline.");
   }
 }
